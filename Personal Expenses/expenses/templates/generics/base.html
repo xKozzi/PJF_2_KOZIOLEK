@@ -1,0 +1,47 @@
+{% load static alerts %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="{% static 'images/icons8-money-64.png' %}">
+    <title>Personal Finanses</title>
+
+    {% comment %} CSS {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/generics/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/generics/background-colors.css' %}">
+    <link rel="stylesheet" href="{% static 'css/generics/text-colors.css' %}">
+    {% comment %}  {% endcomment %}
+
+    {% comment %} FONTS {% endcomment %}
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    {% comment %}  {% endcomment %}
+    {% block extra_js %}{% endblock %}
+	{% block extra_css %}{% endblock %}
+</head>
+<body>
+    <script src="{% static 'js/jquery/jquery-3.6.0.js' %}"></script>
+    <script src="{% static 'js/bootstrap/bootstrap.bundle.min.js' %}"></script>
+
+    <div class="container-fluid flex-container">
+	    {% include "navbar.html" %}
+        <div class="row justify-content-center align-items-center system-messages">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                {% for message in messages %}
+                {% dismissible_alert message=message %}
+                {% endfor %}
+            </div>
+        </div>
+
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- JS -->
+</body>
+</html>

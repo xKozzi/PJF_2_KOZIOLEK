@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static forms buttons %}
+
+{% block content %}
+<div class="row align-items-center justify-content-center">
+    <div class="col-6">
+        <div class="row">
+            <div class="col-12 bento-box my-2">
+                    <h4 class="alert-heading">Monthly Summary for {{ month_title }}</h4>
+                    <p>
+                        Monthly expenses limit: {{ limit_sum }}
+                    </p>
+                    <hr>
+                    <p class="mb-0">
+                        Total currently used balance: {{ expenses_sum }}/{{ limit_sum }}
+                    </p>
+            </div>
+            <table class="table rounded-4 overflow-hidden table-responsive table-striped table-dark">
+                <caption class="styled">Your categories list</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Current expenses</th>
+                        <th scope="col">Limit</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for category in categories %}
+                    <tr>
+                        <th>{{ category.pk }}</th>
+                        <td>{{ category.name }}</td>
+                        <td>{{ category.get_current_balance }}</td>
+                        <td><div {% if category.get_current_balance > category.limit %}class="red"{% else %}{% endif %} >{{ category.limit }}</div></td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                {% button href="finances:expenses_for_category" pk=category.pk title="Expenses" color="blue" %}
+                                {% button href="finances:category_update" pk=category.pk title="Edit" color="dark-slate-blue" %}
+                                <form method="post" action="{% url 'finances:category_delete' pk=category.pk %}">
+                                    {% csrf_token %}
+                                    {% button title="Delete" color="red" %}
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <div class="row justify-content-center">
+                <div class="col-2">
+                    {% button href="finances:category_create" title="Add new category" color="dark-slate-blue" %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

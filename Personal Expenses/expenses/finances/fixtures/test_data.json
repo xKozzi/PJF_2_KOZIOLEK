@@ -1,0 +1,154 @@
+[
+  {
+    "model": "finances.category",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "name": "Groceries",
+      "limit": 200
+    }
+  },
+  {
+    "model": "finances.category",
+    "pk": 2,
+    "fields": {
+      "user": 1,
+      "name": "Clothing",
+      "limit": 150
+    }
+  },
+  {
+    "model": "finances.category",
+    "pk": 3,
+    "fields": {
+      "user": 1,
+      "name": "Electronics",
+      "limit": 300
+    }
+  },
+  {
+    "model": "finances.category",
+    "pk": 4,
+    "fields": {
+      "user": 1,
+      "name": "Books",
+      "limit": 100
+    }
+  },
+  {
+    "model": "finances.category",
+    "pk": 5,
+    "fields": {
+      "user": 1,
+      "name": "Home Decor",
+      "limit": 150
+    }
+  },
+  {
+    "model": "finances.category",
+    "pk": 6,
+    "fields": {
+      "user": 1,
+      "name": "Fitness",
+      "limit": 200
+    }
+  },
+  {
+    "model": "finances.category",
+    "pk": 7,
+    "fields": {
+      "user": 1,
+      "name": "Travel",
+      "limit": 5000
+    }
+  },
+  {
+    "model": "finances.category",
+    "pk": 8,
+    "fields": {
+      "user": 1,
+      "name": "Entertainment",
+      "limit": 2500
+    }
+  },
+  {
+    "model": "finances.expense",
+    "pk": 1,
+    "fields": {
+      "name": "Weekly Groceries",
+      "value": 150.0,
+      "category": 1,
+      "date": "2024-02-10"
+    }
+  },
+  {
+    "model": "finances.expense",
+    "pk": 2,
+    "fields": {
+      "name": "New T-shirt",
+      "value": 25.0,
+      "category": 2,
+      "date": "2024-02-09"
+    }
+  },
+  {
+    "model": "finances.expense",
+    "pk": 3,
+    "fields": {
+      "name": "Smartphone",
+      "value": 400.0,
+      "category": 3,
+      "date": "2024-02-08"
+    }
+  },
+  {
+    "model": "finances.expense",
+    "pk": 4,
+    "fields": {
+      "name": "Harry Potter book series",
+      "value": 80.0,
+      "category": 4,
+      "date": "2024-02-07"
+    }
+  },
+  {
+    "model": "finances.expense",
+    "pk": 5,
+    "fields": {
+      "name": "Throw pillows",
+      "value": 50.0,
+      "category": 5,
+      "date": "2024-02-06"
+    }
+  },
+  {
+    "model": "finances.expense",
+    "pk": 6,
+    "fields": {
+      "name": "Gym membership",
+      "value": 180.0,
+      "category": 6,
+      "date": "2024-02-05"
+    }
+  },
+  {
+    "model": "finances.expense",
+    "pk": 7,
+    "fields": {
+      "name": "Flight tickets",
+      "value": 1000.0,
+      "category": 7,
+      "date": "2024-02-04"
+    }
+  },
+  {
+    "model": "finances.expense",
+    "pk": 8,
+    "fields": {
+      "name": "Concert tickets",
+      "value": 150.0,
+      "category": 8,
+      "date": "2024-02-03"
+    }
+  }
+]

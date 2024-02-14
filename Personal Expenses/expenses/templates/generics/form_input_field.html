@@ -1,0 +1,9 @@
+<div class="{% if not is_checkbox %}form-outline form-floating form-white{% endif %} mb-2">
+    {{ field }}
+    <label class="{% if is_checkbox %}form-check-label{% else %}form-label{% endif %}" for="{{ field.id_for_label }}">{{ field.label }}</label>
+    {% if field.errors %}
+    <div class="text-danger">
+        {{ field.errors }}
+    </div>
+    {% endif %}
+</div>

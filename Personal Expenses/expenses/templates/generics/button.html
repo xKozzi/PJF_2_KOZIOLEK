@@ -1,0 +1,9 @@
+{% load static %}
+
+{% if href %}
+<a href="{{ href }}" class="btn btn-{{ size }} bg-{{ color }}" class="{{ extra_classes }}">
+    {{ title }}
+</a>
+{% else %}
+<button type="submit" class="btn btn-{{ size }} bg-{{ color }}" class="{{ extra_classes }}">{{ title }}</button>
+{% endif %}

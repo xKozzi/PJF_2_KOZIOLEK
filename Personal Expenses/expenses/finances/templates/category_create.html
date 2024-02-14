@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static forms buttons %}
+
+{% block content %}
+
+<div class="row align-items-center justify-content-center">
+    <div class="col-4 bento-box">
+        <div class="row align-items-center justify-content-center">
+			<h2 class="text-center text-uppercase mb-4 text-white">{% if object %}Edit category{% else %}Add new category{% endif %}</h2>
+			<div class="container py-5 vertical-fill align-items-center">
+				<form method="POST">
+					{% csrf_token %}
+					{% form_input_field form.name %}
+					{% form_input_field form.user %}
+					{% form_input_field form.limit %}
+					<button class="btn btn-outline-light px-5" type="submit">Submit</button>
+				</form>
+			</div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
